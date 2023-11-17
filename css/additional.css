@@ -1,0 +1,642 @@
+@charset "UTF-8";
+
+/**************************************
+
+       PukiWiki Additional CSS
+
+***************************************/
+
+/**************  BASE *****************/
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  color: #666;
+  margin: 0;
+  font-size:100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  font-weight: normal;
+  background-color: #fefef2;
+}
+
+a:link,
+a:active,
+a:visited {
+  background-color: transparent;
+  color: #eeeeee;
+}
+a:hover {
+  color: red;
+}
+
+h1,h2,h3,h4,h5,h6{
+  border: none;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-family:inherit;
+  background-color:transparent;
+  color: #666;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+dl.list1 {
+  margin: 1rem 0 ;
+  padding: 0;
+}
+
+dt {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-weight:bold;
+}
+
+dd {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+pre {
+  margin: 1rem 0;
+  margin-bottom: 1rem;
+  border: none;
+  padding: 1rem;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  overflow: auto;
+  color: #333;
+  background: #EEE;
+}
+
+ul,ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 0px !important;
+  padding-left: 16px;
+}
+
+a.note_super{
+  font-size: 0.75rem;
+  vertical-align: top;
+}
+
+div.jumpmenu {
+  visibility:hidden;
+}
+
+hr {
+ border:none;
+ border-top: dotted 1px #CCCCCC;
+ height: 1px
+}
+
+hr.note_hr {
+  visibility:hidden;
+}
+
+/* aname.inc.php */
+.anchor_super {
+  visibility:hidden;
+}
+
+/* hr.inc.php */
+hr.short_line {
+  width: 100%;
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  background-color: #afafaf;
+  border: none;
+}
+
+/* image.inc.php ref.inc.php */
+div.img_margin {
+  margin:0;
+}
+
+
+/***************** LAYOUT ******************/
+
+/***** HEADER *****/
+
+header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 5rem;
+  background: #333;
+  box-shadow: 0 3px 0.3125rem rgba(0,0,0,.4);
+  z-index: 999;
+}
+
+#logo {
+  position: absolute;
+  display: flex;
+  margin-left: 5px;
+    margin-top: 8px;
+}
+
+div.unagilogo {
+  margin-top: 3%;
+}
+
+.unagilogo img {
+  width: 60px;
+  height: 60px;
+}
+
+div.title {
+  position: absolute;
+  width: 200px;
+  line-height: 180%;
+  margin-top: 2%;
+  margin-left: 70px;
+}
+
+div.title h1{
+  color: #FFF;
+  font-size: 1rem;
+}
+
+div.title h2{
+  position: absolute;
+  width: 100%;
+  line-height: 180%;
+  color: #FFF;
+  font-size: 0.5rem;
+}
+
+.slider {
+  width: 100%;
+	height: 500px;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.slider-item01 img {
+  width: 100%;
+  height: 500px;
+}
+
+.slider-item02 img {
+  width: 100%;
+  height: 500px;
+}
+
+.slider-item03 img {
+  width: 100%;
+  height: 500px;
+}
+
+.slider-item04 img {
+  width: 100%;
+  height: 500px;
+}
+
+.slider-item {
+  width: 100%;
+  height:100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+	z-index: 3;
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #ccc;/*矢印の色*/
+    border-right: 2px solid #ccc;/*矢印の色*/
+    height: 25px;
+    width: 25px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left:2.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right:2.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+	position: relative;
+	z-index: 3;
+    text-align:center;
+	margin:-50px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+#searchBox form {
+  position: absolute;
+  top: 1.25rem;
+  right: 3rem;
+}
+
+#searchBox form label { display: none;}
+#searchBox input[name="word"]{ width: 96% !important;}
+#searchBox input[type="submit"]{ display: none;}
+
+@media only screen and (max-width: 768px) {
+  #searchBox form { display: none;}
+}
+
+
+/***** READ MODE CONTAINER *****/
+
+#readMode {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+  #readMode {
+    min-width: 16rem;
+    display: block;
+  }
+}
+
+/* NAVIGATION */
+
+#g-nav{
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position:fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+  top:-120%;
+  left:0;
+  width:100%;
+  height: 45vh;/*ナビの高さ*/
+  background:#333;
+  /*動き*/
+  transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+  top: 0;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5% 2%;
+  z-index: 999;
+  width: 60%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+  list-style: none;
+  text-align: center; 
+}
+
+#g-nav li a{
+  color: #fff;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.container{
+  position: relative;
+}
+
+.container p {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding:0;
+  margin:0;
+  font-size:10px;
+  color: #fff;
+}
+
+#g-nav li img{
+  width: 100%;
+  max-width: 300px;
+  min-width: 80px;
+  background-color: #fff;
+  transition: all 0.6s;
+}
+
+#g-nav li img:hover {
+  opacity: 0.5;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+  position:absolute;
+  z-index: 9999;
+  top:10px;
+  right: 30px;
+  cursor: pointer;
+  width: 50px;
+  height:50px;
+}
+
+/*×に変化*/	
+.openbtn span{
+  position: absolute;
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  width: 60%;
+}
+
+.openbtn span:nth-of-type(1) {
+top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+top:26px;
+}
+
+.openbtn span:nth-of-type(3) {
+top:37px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 60%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 60%;
+}
+
+/* MAIN CONTENT */
+
+article {
+  width: 100%;
+  padding: 3rem
+}
+
+@media only screen and (max-width: 768px) {
+  article {
+    width: 84%;
+    padding: 3rem 8%;
+  }
+}
+
+#main {
+  width: 100%;
+}
+
+#main div {
+  line-height: 180%;
+}
+
+#main h3{
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted gray;
+}
+
+#main li,
+#main p {
+  margin-top: 0rem;
+  line-height: 180%;
+  text-align: justify;
+}
+
+#main img {
+	max-width: 100%;
+	height: auto;
+}
+
+#main iframe {
+	display: block;
+}
+
+#main textarea,
+#main input {
+  max-width: 90% !important;
+}
+
+/* note attach lastmodified related */
+
+#note {
+  margin-bottom: 1rem !important;
+}
+
+#attach {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+}
+
+#lastmodified {
+  font-size:0.75rem;
+  margin-bottom: 1rem;
+}
+
+#related {
+  padding: 0 3rem;
+  font-size:0.75rem;
+  margin-bottom: 1rem;
+}
+
+
+/***** EDIT MODE CONTAINER *****/
+
+#editMode {
+  width: 70%;
+  max-width: 960px;
+  margin: 3rem auto;
+}
+
+#editMode textarea{
+  display: block;
+  width: 100% !important;
+  line-height: 150%;
+}
+
+#editMode li:first-child {
+  list-style-type: none;
+}
+
+#editMode input[name="preview"]{
+  display: none;
+}
+
+/* トップページボタン */
+
+.page_top1{
+  margin-right: 5%;
+  margin-left: auto;
+  margin-top: 10%;
+  width: 6%;
+}
+
+#page_top{
+  width: 60px;
+  height: 60px;
+  right: 0%;
+  bottom: 0;
+  background: #333;
+  opacity: 0.6;
+  border-radius: 10px;
+}
+
+#page_top a{
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+}
+
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f106';
+  font-size: 50px;
+  color: #fff;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+/***** FOOTER *****/
+
+footer {
+  padding: 3rem;
+  background: #333;
+}
+
+div#toolbar {
+  margin-bottom: 1rem;
+  text-align:center;
+}
+
+div#signature {
+  font-size:0.75rem;
+  text-align:center;
+}
+
+div#signature p {
+  color: #FFF;
+}
+
+/* EOF */
+
+
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  #logo {
+    margin-left: 3%;
+  }
+
+  #g-nav{
+    height: 30vh;
+  }
+
+  #g-nav ul {
+    display: flex;
+    float: left;
+    width: 80%;
+    max-width: 1600px;
+  }
+
+  .openbtn {
+    margin-right: 3%;
+  }
+
+  .page_top1{
+    margin-right: 0;
+  }
+
+  #page_top{
+    width: 80px;
+    height: 80px;
+  }
+
+  #page_top a{
+    width: 80px;
+    height: 80px;
+  }
+
+  #page_top a::before{
+    font-weight: 700;
+    font-size: 80px;
+    width: 80px;
+    height: 80px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  #g-nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+}
